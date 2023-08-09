@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+//imported the View into the App.js I tried to do it the simplfied way but it seemed to complicated
+
+import ViewColor from './View/ViewColor';
+import ViewFour from './View/ViewFour';
+import ViewHello from './View/ViewHello';
+import ViewHome from './View/ViewHome';
+import React from 'react';
+import {
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path='/' element={<ViewHome />} />
+        <Route path='/4' element={<ViewFour/>} />
+        <Route path='/hello' element={<ViewHello />} />
+        <Route path='/hello/blue/red' element={<ViewColor />} />
+      </Routes>
+
+
     </div>
   );
 }
